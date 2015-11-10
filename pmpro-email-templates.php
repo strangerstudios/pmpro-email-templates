@@ -5,7 +5,7 @@
  * Author: Stranger Studios
  * Author URI: http://www.strangerstudios.com
  * Plugin URI: http://www.paidmembershipspro.com/add-ons/plugins-wordpress-repository/email-templates-admin-editor/
- * Version: 0.6.1
+ * Version: 0.6.2
  */
 
 /*
@@ -247,9 +247,15 @@ function pmproet_test_pmpro_email_recipient($email)
 /* Filter Subject and Body */
 function pmproet_email_filter($email) {
 
-    //is this email disabled?
+    global $pmproet_email_defaults;
+
+    //is this email disabled or is it not in the templates array?
     if(pmpro_getOption('email_' . $email->template . '_disabled') == 'true')
         return false;
+
+    //leave the email alone if it's not in the list of templates
+    if( ! $pmproet_email_defaults[$email->template] )
+        return $email;
 
     $et_subject = pmpro_getOption('email_' . $email->template . '_subject');
     $et_header = pmpro_getOption('email_header_body');
@@ -426,7 +432,6 @@ function pmproet_email_data($data, $email) {
     return $data;
 }
 add_filter('pmpro_email_data', 'pmproet_email_data', 10, 2);
-
 
 
 /**
