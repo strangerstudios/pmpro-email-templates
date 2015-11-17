@@ -254,7 +254,7 @@ function pmproet_email_filter($email) {
         return false;
 
     //leave the email alone if it's not in the list of templates
-    if( ! $pmproet_email_defaults[$email->template] )
+    if( empty( $pmproet_email_defaults[$email->template] ) )
         return $email;
 
     $et_subject = pmpro_getOption('email_' . $email->template . '_subject');
