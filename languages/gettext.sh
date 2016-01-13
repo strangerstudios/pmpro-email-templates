@@ -6,7 +6,7 @@
 # then execute `cp languages/pmproet.pot languages/pmproet.po` to copy the .pot to .po
 # then execute `msgfmt languages/pmproet.po --output-file languages/pmproet.mo` to generate the .mo
 #---------------------------
-echo "Updating pmpro.pot... "
+echo "Updating pmproet.pot... "
 xgettext -j -o languages/pmproet.pot \
 --default-domain=pmproet \
 --language=PHP \
