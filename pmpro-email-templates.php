@@ -5,7 +5,7 @@
  * Author: Stranger Studios
  * Author URI: http://www.strangerstudios.com
  * Plugin URI: http://www.paidmembershipspro.com/add-ons/plugins-wordpress-repository/email-templates-admin-editor/
- * Version: 0.6.2
+ * Version: 0.7
  */
 
 /*
@@ -15,6 +15,14 @@ function pmproet_init() {
     require_once(dirname(__FILE__) . '/includes/init.php');
 }
 add_action('init', 'pmproet_init');
+
+/*
+	Load plugin textdomain.
+*/
+function pmproet_load_textdomain() {
+  load_plugin_textdomain( 'pmproet', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' ); 
+}
+add_action( 'plugins_loaded', 'pmproet_load_textdomain' );
 
 /*
  * Setup admin pages
@@ -39,7 +47,7 @@ function pmproet_admin_bar_menu() {
 	$wp_admin_bar->add_menu( array(
 	'id' => 'pmpro-email-templates',
 	'parent' => 'paid-memberships-pro',
-	'title' => __( 'Email Templates', 'pmpro'),
+	'title' => __( 'Email Templates', 'pmproet'),
 	'href' => get_admin_url(NULL, '/admin.php?page=pmpro-email-templates') ) );	
 }
 add_action('admin_bar_menu', 'pmproet_admin_bar_menu', 1000);

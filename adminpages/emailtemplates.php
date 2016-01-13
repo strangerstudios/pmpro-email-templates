@@ -43,19 +43,19 @@ require_once( PMPRO_DIR . "/adminpages/admin_header.php" );
 		<th scope="row" valign="top"></th>
 		<td>
 			<label><input id="email_template_disable" name="email_template_disable" type="checkbox"/><span
-					id="disable_label">Disable this email?</span></label>
+					id="disable_label"><?php _e('Disable this email?', 'pmproet');?></span></label>
 
-			<p id="disable_description" class="description small">Emails with this template will not be sent.</p>
+			<p id="disable_description" class="description small"><?php _e('Emails with this template will not be sent.', 'pmproet');?></p>
 		</td>
 	</tr>
 	<tr class="hide-while-loading">
-		<th scope="row" valign="top"><label for="email_template_subject">Subject</label></th>
+		<th scope="row" valign="top"><label for="email_template_subject"><?php _e('Subject', 'pmproet');?></label></th>
 		<td>
 			<input id="email_template_subject" name="email_template_subject" type="text" size="100"/>
 		</td>
 	</tr>
 	<tr class="hide-while-loading">
-		<th scope="row" valign="top"><label for="email_template_body">Body</label></th>
+		<th scope="row" valign="top"><label for="email_template_body"><?php _e('Body', 'pmproet');?></label></th>
 		<td>
 			<div id="template_editor_container">
 				<textarea rows="10" cols="80" name="email_template_body" id="email_template_body"></textarea>
@@ -68,7 +68,7 @@ require_once( PMPRO_DIR . "/adminpages/admin_header.php" );
 			<?php _e( 'Send a test email to ', 'pmproet' ); ?>
 			<input id="test_email_address" name="test_email_address" type="text"
 			       value="<?php echo $current_user->user_email; ?>"/>
-			<input id="send_test_email" class="button" name="send_test_email" value="Save Template and Send Email"
+			<input id="send_test_email" class="button" name="send_test_email" value="<?php _e('Save Template and Send Email', 'pmproet');?>"
 			       type="button"/>
 
 			<p class="description">
@@ -94,143 +94,143 @@ require_once( PMPRO_DIR . "/adminpages/admin_header.php" );
 	<tr>
 		<th scope="row" valign="top"></th>
 		<td>
-			<h3>Variable Reference</h3>
+			<h3><?php _e('Variable Reference', 'pmproet');?></h3>
 
 			<div id="template_reference" style="overflow:scroll;height:250px;width:800px;;">
 				<table class="widefat striped">
 					<tr>
-						<th colspan=2>General Settings / Membership Info</th>
+						<th colspan=2><?php _e('General Settings / Membership Info', 'pmproet');?></th>
 					</tr>
 					<tr>
 						<td>!!name!!</td>
-						<td> Display Name (Profile/Edit User > Display name publicly as)</td>
+						<td><?php _e('Display Name (Profile/Edit User > Display name publicly as)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!user_login!!</td>
-						<td> Username</td
+						<td><?php _e('Username', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!sitename!!</td>
-						<td> Site Title</td
+						<td><?php _e('Site Title', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!siteemail!!</td>
-						<td> Site Email Address (General Settings > Email OR Memberships > Email Settings)</td
+						<td><?php _e('Site Email Address (General Settings > Email OR Memberships > Email Settings)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!membership_id!!</td>
-						<td> Membership Level ID</td
+						<td><?php _e('Membership Level ID', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!membership_level_name!!</td>
-						<td> Membership Level Name</td
+						<td><?php _e('Membership Level Name', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!membership_change!!</td>
-						<td> Membership Level Change</td
+						<td><?php _e('Membership Level Change', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!membership_expiration!!</td>
-						<td> Membership Level Expiration</td
+						<td><?php _e('Membership Level Expiration', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!display_name!!</td>
-						<td> Display Name (Profile/Edit User > Display name publicly as)</td
+						<td><?php _e('Display Name (Profile/Edit User > Display name publicly as)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!enddate!!</td>
-						<td> User Subscription End Date</td
+						<td><?php _e('User Subscription End Date', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!user_email!!</td>
-						<td> User Email</td
+						<td><?php _e('User Email', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!login_link!!</td>
-						<td> Login URL</td
+						<td><?php _e('Login URL', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!levels_link!!</td>
-						<td> Membership Levels Page URL</td
+						<td><?php _e('Membership Levels Page URL', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<th colspan=2>Billing Information</th>
 					</tr>
 					<tr>
 						<td>!!billing_address!!</td>
-						<td> Billing Info Complete Address</td
+						<td><?php _e('Billing Info Complete Address', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_name!!</td>
-						<td> Billing Info Name</td
+						<td><?php _e('Billing Info Name', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_street!!</td>
-						<td> Billing Info Street Address</td
+						<td><?php _e('Billing Info Street Address', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_city!!</td>
-						<td> Billing Info City</td
+						<td><?php _e('Billing Info City', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_state!!</td>
-						<td> Billing Info State</td
+						<td><?php _e('Billing Info State', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_zip!!</td>
-						<td> Billing Info ZIP Code</td
+						<td><?php _e('Billing Info ZIP Code', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_country!!</td>
-						<td> Billing Info Country</td
+						<td><?php _e('Billing Info Country', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!billing_phone!!</td>
-						<td> Billing Info Phone #</td
+						<td><?php _e('Billing Info Phone #', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!cardtype!!</td>
-						<td> Credit Card Type</td
+						<td><?php _e('Credit Card Type', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!accountnumber!!</td>
-						<td> Credit Card Number (last 4 digits))</td
+						<td><?php _e('Credit Card Number (last 4 digits)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!expirationmonth!!</td>
-						<td> Credit Card Expiration Month (mm format)</td
+						<td><?php _e('Credit Card Expiration Month (mm format)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!expirationyear!!</td>
-						<td> Credit Card Expiration Year (yyyy format)</td
+						<td><?php _e('Credit Card Expiration Year (yyyy format)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!membership_cost!!</td>
-						<td> Membership Level Cost Text</td
+						<td><?php _e('Membership Level Cost Text', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!instructions!!</td>
-						<td> Payment Instructions (used in Checkout - Email Template)</td
+						<td><?php _e('Payment Instructions (used in Checkout - Email Template)', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!invoice_id!!</td>
-						<td> Invoice ID</td
+						<td><?php _e('Invoice ID', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!invoice_total!!</td>
-						<td> Invoice Total</td
+						<td><?php _e('Invoice Total', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!invoice_date!!</td>
-						<td> Invoice Date</td
+						<td><?php _e('Invoice Date', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!discount_code!!</td>
-						<td> Discount Code Applied</td
+						<td><?php _e('Discount Code Applied', 'pmproet');?></td>
 					</tr>
 					<tr>
 						<td>!!invoice_link!!</td>
-						<td> Invoice Page URL</td
+						<td><?php _e('Invoice Page URL', 'pmproet');?></td>
 					</tr>
 				</table>
 			</div>
