@@ -72,7 +72,7 @@ require_once( PMPRO_DIR . "/adminpages/admin_header.php" );
 			       type="button"/>
 
 			<p class="description">
-				<a hre="<?php echo add_query_arg( array( 'page'  => 'pmpro-orders',
+				<a href="<?php echo add_query_arg( array( 'page'  => 'pmpro-orders',
 				                                          'order' => $pmproet_test_order_id
 				), admin_url( 'admin.php' ) ); ?>"
 				   target="_blank"><?php _e( 'Click here to edit the order used for test emails.', 'pmproet' ); ?></a>
