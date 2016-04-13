@@ -468,8 +468,6 @@ function pmproet_getTemplateBody($template) {
         $file = get_stylesheet_directory() . '/paid-memberships-pro/email/' . $template . '.html';
     } elseif ( file_exists( get_template_directory() . '/paid-memberships-pro/email/' . $template . '.html') ) {
 	    $file = get_template_directory() . '/paid-memberships-pro/email/' . $template . '.html';
-    } elseif ( file_exists( trailingslashit($pmproet_email_defaults[$template]['dir_path']) . $template . '.html') ) {
-	    $file = trailingslashit($pmproet_email_defaults[$template]['dir_path']) . $template . '.html';
     } elseif( file_exists( PMPRO_DIR . '/email/' . $template . '.html')) {
         $file = PMPRO_DIR . '/email/' . $template . '.html';
     } 
