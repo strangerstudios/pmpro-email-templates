@@ -31,6 +31,7 @@ Simply select an email template from the dropdown list, edit, and save!
 
 == Changelog ==
 = .7 =
+* BUG: Fixed link to edit the test order.
 * FEATURE: Updated for localization with new pmproet.pot/po files.
 
 = .6.2. =
