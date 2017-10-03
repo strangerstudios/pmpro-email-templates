@@ -9,14 +9,18 @@ function pmproet_admin_init_test_order() {
 	global $current_user, $pmproet_test_order_id;
 
 	//make sure PMPro is activated
-	if ( ! class_exists( 'MemberOrder' ) ) {
+	if ( ! class_exists( '\MemberOrder' ) ) {
 		return;
 	}
-
-	$pmproet_test_order_id = get_option( 'pmproet_test_order_id' );
-	$test_order            = new MemberOrder( $pmproet_test_order_id );
-	if ( empty( $test_order->id ) ) {
+	
+	$pmproet_test_order_id = get_option( 'pmproet_test_order_id', false );
+	
+	// Create dummy/test order record if ID isn't set yet
+	if ( empty( $pmproet_test_order_id ) ) {
+		
+		$test_order            = new MemberOrder();
 		$all_levels = pmpro_getAllLevels();
+		
 		if ( ! empty( $all_levels ) ) {
 			$first_level                = array_shift( $all_levels );
 			$test_order->membership_id  = $first_level->id;
@@ -47,11 +51,11 @@ function pmproet_admin_init_test_order() {
 		$test_order->notes               = __( 'This is a test order used with the PMPro Email Templates addon.', 'pmproet' );
 		$test_order->saveOrder();
 		$pmproet_test_order_id = $test_order->id;
-		update_option( 'pmproet_test_order_id', $pmproet_test_order_id );
+		update_option( 'pmproet_test_order_id', $pmproet_test_order_id, 'no' );
 	}
 }
 
-add_action( 'admin_init', 'pmproet_admin_init_test_order' );
+add_action( 'admin_init', 'pmproet_admin_init_test_order'  );
 
 /**
  * Default email templates.
