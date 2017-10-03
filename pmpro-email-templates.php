@@ -14,7 +14,7 @@
 function pmproet_init() {
     require_once(dirname(__FILE__) . '/includes/init.php');
 }
-add_action('init', 'pmproet_init');
+add_action('plugins_loaded', 'pmproet_init');
 
 /*
 	Load plugin textdomain.
@@ -155,23 +155,29 @@ function pmproet_send_test() {
     $test_email->template = str_replace('email_', '', $_REQUEST['template']);
 	
 	//add filter to change recipient
-	add_filter('pmpro_email_recipient', 'pmproet_test_pmpro_email_recipient');
+	add_filter('pmpro_email_recipient', 'pmproet_test_pmpro_email_recipient', 10, 2);
 	
     //load test order
     $pmproet_test_order_id = get_option('pmproet_test_order_id');
     $test_order = new MemberOrder($pmproet_test_order_id);
-
+	
+    $test_user = $current_user;
+    
+    // Grab the first membership level defined as a "test level" to use
+	$all_levels = pmpro_getAllLevels( true);
+    $test_user->membership_level = array_pop( $all_levels );
+    
     //add notice to email body
-    add_filter('pmpro_email_body', 'pmproet_test_email_body');
+    add_filter('pmpro_email_body', 'pmproet_test_email_body', 10, 2);
 
     //force the template
-    add_filter('pmpro_email_filter', 'pmproet_test_email_template', 5);
+    add_filter('pmpro_email_filter', 'pmproet_test_email_template', 5, 1);
 
     //figure out how to send the email
     switch($test_email->template) {
         case 'cancel':
             $send_email = 'sendCancelEmail';
-            $params = array($current_user);
+            $params = array($test_user);
             break;
         case 'cancel_admin':
             $send_email = 'sendCancelAdminEmail';
@@ -184,7 +190,7 @@ function pmproet_send_test() {
         case 'checkout_paid':
         case 'checkout_trial':
             $send_email = 'sendCheckoutEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'checkout_check_admin':
         case 'checkout_express_admin':
@@ -193,43 +199,43 @@ function pmproet_send_test() {
         case 'checkout_paid_admin':
         case 'checkout_trial_admin':
             $send_email = 'sendCheckoutAdminEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'billing':
             $send_email = 'sendBillingEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'billing_admin':
             $send_email = 'sendBillingAdminEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'billing_failure':
             $send_email = 'sendBillingFailureEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'billing_failure_admin':
             $send_email = 'sendBillingFailureAdminEmail';
-            $params = array($current_user->user_email, $test_order);
+            $params = array($test_user->user_email, $test_order);
             break;
         case 'credit_card_expiring':
             $send_email = 'sendCreditCardExpiringEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'invoice':
             $send_email = 'sendInvoiceEmail';
-            $params = array($current_user, $test_order);
+            $params = array($test_user, $test_order);
             break;
         case 'trial_ending':
             $send_email = 'sendTrialEndingEmail';
-            $params = array($current_user);
+            $params = array($test_user);
             break;
         case 'membership_expired';
             $send_email = 'sendMembershipExpiredEmail';
-            $params = array($current_user);
+            $params = array($test_user);
             break;
         case 'membership_expiring';
             $send_email = 'sendMembershipExpiringEmail';
-            $params = array($current_user);
+            $params = array($test_user);
             break;
         default:
             $send_email = 'sendEmail';
@@ -253,7 +259,7 @@ function pmproet_test_pmpro_email_recipient($email)
 }
 
 /* Filter Subject and Body */
-function pmproet_email_filter($email) {
+function pmproet_email_filter($email ) {
 
     global $pmproet_email_defaults;
 
@@ -305,13 +311,14 @@ function pmproet_email_filter($email) {
 
     return $email;
 }
-add_filter('pmpro_email_filter', 'pmproet_email_filter');
+add_filter('pmpro_email_filter', 'pmproet_email_filter', 10, 1);
 
 //for test emails
-function pmproet_test_email_body($body, $email) {
+function pmproet_test_email_body($body, $email = null) {
     $body .= '<br><br><b>--- ' . __('THIS IS A TEST EMAIL', 'pmproet') . ' --</b>';
     return $body;
 }
+
 function pmproet_test_email_template($email)
 {
     if(!empty($_REQUEST['template']))
