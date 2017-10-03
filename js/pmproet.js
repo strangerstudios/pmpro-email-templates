@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
                 $subject.hide();
 				$testemail.hide();
 				
-                if(template == 'email_header')
+                if(template == 'header')
                     $("#disable_label").text("Disable email header for all PMPro emails?");
                 else
                     $("#disable_label").text("Disable email footer for all PMPro emails?");
