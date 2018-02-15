@@ -1,0 +1,421 @@
+#
+# Hi there! Details on how to help out translating Paid Memberships Pro can be found at:
+# http://www.paidmembershipspro.com/documentation/languages/
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PMPro Email Template\n"
+"Report-Msgid-Bugs-To: jason@strangerstudios.com\n"
+"POT-Creation-Date: 2018-02-14 23:08+0100\n"
+"PO-Revision-Date: 2018-02-15 10:23+0100\n"
+"Last-Translator: Alfonso Sánchez Uzábal <skotperez@voragine.net>\n"
+"Language-Team: Montera34 <info@montera34.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: languages\n"
+
+#: adminpages/emailtemplates.php:4
+msgid "You do not have permissions to perform this action."
+msgstr "Vous n'êtes pas autorisé à effectuer cette action."
+
+#: adminpages/emailtemplates.php:14 pmpro-email-templates.php:31
+#: pmpro-email-templates.php:50
+msgid "Email Templates"
+msgstr "Modèles d'email"
+
+#: adminpages/emailtemplates.php:32
+msgid "Email Header"
+msgstr "En-tête"
+
+#: adminpages/emailtemplates.php:33
+msgid "Email Footer"
+msgstr "Émail footer"
+
+#: adminpages/emailtemplates.php:46
+msgid "Disable this email?"
+msgstr "Désactiver cet émail ?"
+
+#: adminpages/emailtemplates.php:48
+msgid "Emails with this template will not be sent."
+msgstr "Les e-mails avec ce modèle ne seront pas envoyés."
+
+#: adminpages/emailtemplates.php:52
+msgid "Subject"
+msgstr "Sujet"
+
+#: adminpages/emailtemplates.php:58
+msgid "Body"
+msgstr "Corps de l'émail"
+
+#: adminpages/emailtemplates.php:68
+msgid "Send a test email to "
+msgstr "Envoyer un émail de test à "
+
+#: adminpages/emailtemplates.php:71
+msgid "Save Template and Send Email"
+msgstr "Enregistrer le modèle et envoyer l'émail"
+
+#: adminpages/emailtemplates.php:78
+msgid "Click here to edit the order used for test emails."
+msgstr "Cliquez ici pour modifier la commande utilisée pour les émail de test."
+
+#: adminpages/emailtemplates.php:79
+msgid "Your current membership will be used for any membership level data."
+msgstr "Votre abonnement actuel sera utilisé pour toutes les données de chaque niveau d'adhésion."
+
+#: adminpages/emailtemplates.php:97
+msgid "Variable Reference"
+msgstr "Référence variable"
+
+#: adminpages/emailtemplates.php:102
+msgid "General Settings / Membership Info"
+msgstr "Paramètres généraux / Informations sur l'adhésion"
+
+#: adminpages/emailtemplates.php:106 adminpages/emailtemplates.php:138
+msgid "Display Name (Profile/Edit User > Display name publicly as)"
+msgstr "Afficher le nom (Profil / Modifier l'utilisateur> Afficher le nom public sous)"
+
+#: adminpages/emailtemplates.php:110
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: adminpages/emailtemplates.php:114
+msgid "Site Title"
+msgstr "Titre du site"
+
+#: adminpages/emailtemplates.php:118
+msgid "Site Email Address (General Settings > Email OR Memberships > Email Settings)"
+msgstr "Adresse émail du site (Paramètres généraux> Émail OU Adhésions> Paramètres de messagerie)"
+
+#: adminpages/emailtemplates.php:122
+msgid "Membership Level ID"
+msgstr "ID du niveau d'adhésion"
+
+#: adminpages/emailtemplates.php:126
+msgid "Membership Level Name"
+msgstr "Nom du niveau d'adhésion"
+
+#: adminpages/emailtemplates.php:130
+msgid "Membership Level Change"
+msgstr "Changement de niveau d'adhésion"
+
+#: adminpages/emailtemplates.php:134
+msgid "Membership Level Expiration"
+msgstr "Expiration du niveau d'adhésion"
+
+#: adminpages/emailtemplates.php:142
+msgid "User Subscription End Date"
+msgstr "Date de fin de l'abonnement pour l'utilisateur"
+
+#: adminpages/emailtemplates.php:146
+msgid "User Email"
+msgstr "Émail de l'utilisateur"
+
+#: adminpages/emailtemplates.php:150
+msgid "Login URL"
+msgstr "URL pour se connecter"
+
+#: adminpages/emailtemplates.php:154
+msgid "Membership Levels Page URL"
+msgstr "URL de la page des niveaux d'adhésion"
+
+#: adminpages/emailtemplates.php:161
+msgid "Billing Info Complete Address"
+msgstr "Informations de facturation Adresse complète"
+
+#: adminpages/emailtemplates.php:165
+msgid "Billing Info Name"
+msgstr "Informations de facturation Nom"
+
+#: adminpages/emailtemplates.php:169
+msgid "Billing Info Street Address"
+msgstr "Informations de facturation Adresse"
+
+#: adminpages/emailtemplates.php:173
+msgid "Billing Info City"
+msgstr "Informations de facturation Ville"
+
+#: adminpages/emailtemplates.php:177
+msgid "Billing Info State"
+msgstr "Informations de facturation Département ou région"
+
+#: adminpages/emailtemplates.php:181
+msgid "Billing Info ZIP Code"
+msgstr "Informations de facturation Code postal"
+
+#: adminpages/emailtemplates.php:185
+msgid "Billing Info Country"
+msgstr "Informations de facturation Pays"
+
+#: adminpages/emailtemplates.php:189
+msgid "Billing Info Phone #"
+msgstr "Informations de facturation Téléphone #"
+
+#: adminpages/emailtemplates.php:193
+msgid "Credit Card Type"
+msgstr "Type de carte de crédit"
+
+#: adminpages/emailtemplates.php:197
+msgid "Credit Card Number (last 4 digits)"
+msgstr "Numéro de carte de crédit (les dernières 4 chiffres)"
+
+#: adminpages/emailtemplates.php:201
+msgid "Credit Card Expiration Month (mm format)"
+msgstr "Mois d'expiration de la carte de crédit (format mm)"
+
+#: adminpages/emailtemplates.php:205
+msgid "Credit Card Expiration Year (yyyy format)"
+msgstr "Année d'expiration de la carte de crédit (format yyyy)"
+
+#: adminpages/emailtemplates.php:209
+msgid "Membership Level Cost Text"
+msgstr "Texte du coût du niveau d'adhésion"
+
+#: adminpages/emailtemplates.php:213
+msgid "Payment Instructions (used in Checkout - Email Template)"
+msgstr "Instructions de paiement (utilisées dans Paiement - Modèle d'e-mail)"
+
+#: adminpages/emailtemplates.php:217
+msgid "Invoice ID"
+msgstr "ID de la facture"
+
+#: adminpages/emailtemplates.php:221
+msgid "Invoice Total"
+msgstr "Totale de la facture"
+
+#: adminpages/emailtemplates.php:225
+msgid "Invoice Date"
+msgstr "Date de la facture"
+
+#: adminpages/emailtemplates.php:229
+msgid "Discount Code Applied"
+msgstr "Code de réduction appliqué"
+
+#: adminpages/emailtemplates.php:233
+msgid "Invoice Page URL"
+msgstr "URL de la page de facture"
+
+#: includes/init.php:51
+msgid "This is a test order used with the PMPro Email Templates addon."
+msgstr "Ceci est un ordre de test utilisé avec l'addon PMPro Email Templates."
+
+#: includes/init.php:65
+msgid "An Email From !!sitename!!"
+msgstr "Un Email De !! sitename !!"
+
+#: includes/init.php:66
+msgid "Default Email"
+msgstr "Émail par défaut"
+
+#: includes/init.php:69
+msgid "Your membership at !!sitename!! has been changed"
+msgstr "Votre adhésion à !! sitename !! a été modifié"
+
+#: includes/init.php:70
+msgid "Admin Change"
+msgstr "Changement d'admin"
+
+#: includes/init.php:73
+msgid "Membership for !!user_login!! at !!sitename!! has been changed"
+msgstr "L'adhésion pour !! user_login !! à !! sitename !! a été modifié"
+
+#: includes/init.php:74
+msgid "Admin Change (admin)"
+msgstr "Changement d'admin (admin)"
+
+#: includes/init.php:77
+msgid "Your billing information has been udpated at !!sitename!!"
+msgstr "Vos informations de facturation ont été mises à jour à !! sitename !!"
+
+#: includes/init.php:78
+msgid "Billing"
+msgstr "Facturation"
+
+#: includes/init.php:81
+msgid "Billing information has been udpated for !!user_login!! at !!sitename!!"
+msgstr "Les informations de facturation ont été utilisées pour !!user_login!! à !! sitename!!"
+
+#: includes/init.php:82
+msgid "Billing (admin)"
+msgstr "Facturation (admin)"
+
+#: includes/init.php:85
+msgid "Membership Payment Failed at !!sitename!!"
+msgstr "Le paiement de l'adhésion a échoué à !! sitename !!"
+
+#: includes/init.php:86
+msgid "Billing Failure"
+msgstr "Fallo en la facturación"
+
+#: includes/init.php:89
+msgid "Membership Payment Failed For !!display_name!! at !!sitename!!"
+msgstr "Le paiement de l'adhésion pour !!display_name!! à !!sitename!! a échoué"
+
+#: includes/init.php:90
+msgid "Billing Failure (admin)"
+msgstr "Échec de la facturation (admin)"
+
+#: includes/init.php:93
+msgid "Your membership at !!sitename!! has been CANCELLED"
+msgstr "Votre adhésion à !!sitename!! a été annulé"
+
+#: includes/init.php:94
+msgid "Cancel"
+msgstr "Annuler"
+
+#: includes/init.php:97
+msgid "Membership for !!user_login!! at !!sitename!! has been CANCELLED"
+msgstr "L'adhésion de !!user_login!! à !!sitename!! a été annulé"
+
+#: includes/init.php:98
+msgid "Cancel (admin)"
+msgstr "Annuler (admin)"
+
+#: includes/init.php:101 includes/init.php:109 includes/init.php:117
+#: includes/init.php:125 includes/init.php:133 includes/init.php:141
+msgid "Your membership confirmation for !!sitename!!"
+msgstr "Votre confirmation d'inscription pour !!sitename!!"
+
+#: includes/init.php:102
+msgid "Checkout - Check"
+msgstr "Paiement - Chèque"
+
+#: includes/init.php:105 includes/init.php:113 includes/init.php:121
+#: includes/init.php:129 includes/init.php:137 includes/init.php:145
+msgid "Member Checkout for !!membership_level_name!! at !!sitename!!"
+msgstr "Membre paiement pour !!membership_level_name!! à !!sitename!!"
+
+#: includes/init.php:106
+msgid "Checkout - Check (admin)"
+msgstr "Paiement - Chèque (admin)"
+
+#: includes/init.php:110
+msgid "Checkout - PayPal Express"
+msgstr "Paiement - PayPal Express"
+
+#: includes/init.php:114
+msgid "Checkout - PayPal Express (admin)"
+msgstr "Paiement - PayPal Express (admin)"
+
+#: includes/init.php:118
+msgid "Checkout - Free"
+msgstr "Paiement - Gratuite"
+
+#: includes/init.php:122
+msgid "Checkout - Free (admin)"
+msgstr "Paiement - Gratuit (admin)"
+
+#: includes/init.php:126
+msgid "Checkout - Free Trial"
+msgstr "Paiement - Essai gratuit"
+
+#: includes/init.php:130
+msgid "Checkout - Free Trial (admin)"
+msgstr "Paiement - Essai gratuit (admin)"
+
+#: includes/init.php:134
+msgid "Checkout - Paid"
+msgstr "Paiement - payé"
+
+#: includes/init.php:138
+msgid "Checkout - Paid (admin)"
+msgstr "Paiement - payé (admin)"
+
+#: includes/init.php:142
+msgid "Checkout - Trial"
+msgstr "Paiement - essai"
+
+#: includes/init.php:146
+msgid "Checkout - Trial (admin)"
+msgstr "Paiement - essai (admin)"
+
+#: includes/init.php:149
+msgid "Credit Card on File Expiring Soon at !!sitename!!"
+msgstr "Carte de crédit sur le fichier expirant bientôt à !!sitename!!"
+
+#: includes/init.php:150
+msgid "Credit Card Expiring"
+msgstr "Carte de crédit expirant"
+
+#: includes/init.php:153
+msgid "INVOICE for !!sitename!! membership"
+msgstr "FACTURE pour une adhésion à !!sitename!!"
+
+#: includes/init.php:154
+msgid "Invoice"
+msgstr "Facture"
+
+#: includes/init.php:157
+msgid "Your membership at !!sitename!! has ended"
+msgstr "Votre adhésion à !!sitename!! a fini"
+
+#: includes/init.php:158
+msgid "Membership Expired"
+msgstr "L'adhésion a expiré"
+
+#: includes/init.php:161
+msgid "Your membership at !!sitename!! will end soon"
+msgstr "Votre adhésion à !!sitename!! se terminera bientôt"
+
+#: includes/init.php:162
+msgid "Membership Expiring"
+msgstr "Adhésion expirant"
+
+#: includes/init.php:165
+msgid "Your trial at !!sitename!! is ending soon"
+msgstr "Votre période d'essai à !!sitename!! se termine bientôt"
+
+#: includes/init.php:166
+msgid "Trial Ending"
+msgstr "Fin de période d'essai"
+
+#: pmpro-email-templates.php:318
+msgid "THIS IS A TEST EMAIL"
+msgstr "CECI EST UN EMAIL DE TEST"
+
+#: pmpro-email-templates.php:401
+#, php-format
+msgid "The new level is %s."
+msgstr "Le nouveau niveau est %s."
+
+#: pmpro-email-templates.php:403
+msgid "Your membership has been cancelled"
+msgstr "Votre adhésion a été annulée"
+
+#: pmpro-email-templates.php:406
+#, php-format
+msgid "This membership will expire on %s"
+msgstr "Cette adhésion expirera le %s"
+
+#: pmpro-email-templates.php:409
+msgid "This membership does not expire"
+msgstr "Cette adhésion n'expire pas"
+
+#: pmpro-email-templates.php:414
+#, php-format
+msgid "This membership will expire on %s."
+msgstr "Cette adhésion expirera le %s."
+
+#: pmpro-email-templates.php:510
+msgid "View Documentation"
+msgstr "Afficher documentation"
+
+#: pmpro-email-templates.php:510
+msgid "Docs"
+msgstr "Documentation"
+
+#: pmpro-email-templates.php:511
+msgid "Visit Customer Support Forum"
+msgstr "Visitez le forum de support client"
+
+#: pmpro-email-templates.php:511
+msgid "Support"
+msgstr "Support"
