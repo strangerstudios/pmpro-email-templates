@@ -1,9 +1,8 @@
 === Paid Memberships Pro - Email Templates Add On ===
-
 Contributors: strangerstudios, messica
 Tags: pmpro, paid memberships pro, email, templates, customize, member, membership, subscription, addon
 Requires at least: 3.5
-Tested up to: 4.7
+Tested up to: 4.9.5
 Stable tag: 0.7.1
 
 == Description ==

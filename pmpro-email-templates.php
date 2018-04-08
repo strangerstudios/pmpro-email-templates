@@ -1,12 +1,12 @@
 <?php
-/**
- * Plugin Name: Paid Memberships Pro - Email Templates Add On
- * Description: Define your own custom PMPro HTML Email Templates.
- * Author: Stranger Studios
- * Author URI: http://www.strangerstudios.com
- * Plugin URI: http://www.paidmembershipspro.com/add-ons/plugins-wordpress-repository/email-templates-admin-editor/
- * Version: 0.7.1
- */
+/*
+Plugin Name: Paid Memberships Pro - Email Templates Add On
+Plugin URI: https://www.paidmembershipspro.com/add-ons/email-templates-admin-editor/
+Description: Define your own members email templates including HTML for Paid Memberships Pro.
+Author: Paid Memberships Pro
+Author URI: https://www.paidmembershipspro.com
+Version: 0.7.1
+*/
 
 /*
  * Includes
@@ -489,9 +489,40 @@ function pmproet_getTemplateBody($template) {
     return $body;
 }
 
-/*
-Function to add links to the plugin action links
-*/
+/* Register activation hook. */
+register_activation_hook( __FILE__, 'pmproet_admin_notice_activation_hook' );
+/**
+ * Runs only when the plugin is activated.
+ *
+ * @since 0.1.0
+ */
+function pmproet_admin_notice_activation_hook() {
+    // Create transient data.
+    set_transient( 'pmproet-admin-notice', true, 5 );
+}
+/**
+ * Admin Notice on Activation.
+ *
+ * @since 0.1.0
+ */
+function pmproet_admin_notice() {
+    // Check transient, if available display notice.
+    if ( get_transient( 'pmproet-admin-notice' ) ) { ?>
+        <div class="updated notice is-dismissible">
+            <p><?php printf( __( 'Thank you for activating. <a href="%s">Visit the settings page</a> to get started with the Email Templates Add On.', 'pmpro-slack' ), get_admin_url( null, 'admin.php?page=pmpro-email-templates' ) ); ?></p>
+        </div>
+        <?php
+        // Delete transient, only display this notice once.
+        delete_transient( 'pmproet-admin-notice' );
+    }
+}
+add_action( 'admin_notices', 'pmproet_admin_notice' );
+
+/**
+ * Function to add links to the plugin action links
+ *
+ * @param array $links Array of links to be shown in plugin action links.
+ */
 function pmproet_add_action_links($links) {	
 	$new_links = array(
 			'<a href="' . get_admin_url(NULL, 'admin.php?page=pmpro-email-templates') . '">Settings</a>',
@@ -500,15 +531,18 @@ function pmproet_add_action_links($links) {
 }
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'pmproet_add_action_links');
 
-/*
-Function to add links to the plugin row meta
-*/
+/**
+ * Function to add links to the plugin row meta
+ *
+ * @param array  $links Array of links to be shown in plugin meta.
+ * @param string $file Filename of the plugin meta is being shown for.
+ */
 function pmproet_plugin_row_meta($links, $file) {
 	if(strpos($file, 'pmpro-email-templates.php') !== false)
 	{
 		$new_links = array(
-			'<a href="' . esc_url('http://www.paidmembershipspro.com/add-ons/plugins-wordpress-repository/email-templates-admin-editor/')  . '" title="' . esc_attr( __( 'View Documentation', 'pmproet' ) ) . '">' . __( 'Docs', 'pmproet' ) . '</a>',
-			'<a href="' . esc_url('http://paidmembershipspro.com/support/') . '" title="' . esc_attr( __( 'Visit Customer Support Forum', 'pmproet' ) ) . '">' . __( 'Support', 'pmproet' ) . '</a>',
+			'<a href="' . esc_url('https://www.paidmembershipspro.com/add-ons/email-templates-admin-editor/')  . '" title="' . esc_attr( __( 'View Documentation', 'pmproet' ) ) . '">' . __( 'Docs', 'pmproet' ) . '</a>',
+			'<a href="' . esc_url('https://paidmembershipspro.com/support/') . '" title="' . esc_attr( __( 'Visit Customer Support Forum', 'pmproet' ) ) . '">' . __( 'Support', 'pmproet' ) . '</a>',
 		);
 		$links = array_merge($links, $new_links);
 	}
