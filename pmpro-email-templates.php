@@ -366,7 +366,7 @@ function pmproet_email_data($data, $email) {
 	if(!empty($data['invoice_id']))
 	{
 	    $invoice = new MemberOrder($data['invoice_id']);
-		if(!empty($invoice))
+		if(!empty($invoice) && !empty($invoice->code))
 		{
 			$new_data['billing_name'] = $invoice->billing->name;
 			$new_data['billing_street'] = $invoice->billing->street;
