@@ -5,7 +5,7 @@ Plugin URI: https://www.paidmembershipspro.com/add-ons/email-templates-admin-edi
 Description: Define your own members email templates including HTML for Paid Memberships Pro.
 Author: Paid Memberships Pro
 Author URI: https://www.paidmembershipspro.com
-Version: 0.7.1
+Version: 0.7.2
 */
 
 /*
@@ -28,9 +28,13 @@ add_action( 'plugins_loaded', 'pmproet_load_textdomain' );
  * Setup admin pages
  */
 function pmproet_setup() {
-    add_submenu_page('pmpro-membershiplevels', __('Email Templates', 'pmproet'), __('Email Templates', 'pmproet'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
+    if( version_compare( PMPRO_VERSION, '2.0' ) >= 0 ) {
+        add_submenu_page('pmpro-dashboard', __('Email Templates', 'pmproet'), __('Email Templates', 'pmproet'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
+    } else {
+        add_submenu_page('pmpro-membershiplevels', __('Email Templates', 'pmproet'), __('Email Templates', 'pmproet'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
+    }
 }
-add_action('admin_menu', 'pmproet_setup');
+add_action('admin_menu', 'pmproet_setup', 20);
 
 function pmproet_admin_page()
 {
