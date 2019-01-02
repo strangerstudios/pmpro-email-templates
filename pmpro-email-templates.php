@@ -28,6 +28,10 @@ add_action( 'plugins_loaded', 'pmproet_load_textdomain' );
  * Setup admin pages
  */
 function pmproet_setup() {
+    if ( ! defined( 'PMPRO_VERSION' ) ) {
+        return;
+    }
+    
     if( version_compare( PMPRO_VERSION, '2.0' ) >= 0 ) {
         add_submenu_page('pmpro-dashboard', __('Email Templates', 'pmproet'), __('Email Templates', 'pmproet'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
     } else {
