@@ -165,6 +165,14 @@ $pmproet_email_defaults = array(
 		'subject'     => __( "Your trial at !!sitename!! is ending soon", 'pmproet' ),
 		'description' => __('Trial Ending', 'pmproet')
 	),
+	'payment_action'            => array(
+		'subject'     => __( "Payment action required for your !!sitename!! membership", 'pmproet' ),
+		'description' => __('Payment Action Required', 'pmproet')
+	),
+	'payment_action_admin'      => array(
+		'subject'     => __( "Payment action required: membership for !!user_login!! at !!sitename!!", 'pmproet' ),
+		'description' => __('Payment Action Required (admin)', 'pmproet')
+	),
 );
 
 /**

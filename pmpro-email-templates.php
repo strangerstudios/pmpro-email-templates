@@ -245,6 +245,14 @@ function pmproet_send_test() {
             $send_email = 'sendMembershipExpiringEmail';
             $params = array($test_user);
             break;
+        case 'payment_action':
+            $send_email = 'sendPaymentActionRequiredEmail';
+            $params = array($test_user, $test_order, "http://www.example-notification-url.com/not-a-real-site");
+            break;
+        case 'payment_action_admin':
+            $send_email = 'sendPaymentActionRequiredAdminEmail';
+            $params = array($test_user, $test_order, "http://www.example-notification-url.com/not-a-real-site");
+            break;
         default:
             $send_email = 'sendEmail';
             $params = array();
