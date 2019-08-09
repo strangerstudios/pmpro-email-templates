@@ -2,7 +2,7 @@
 Contributors: strangerstudios, messica
 Tags: pmpro, paid memberships pro, email, templates, customize, member, membership, subscription, addon
 Requires at least: 3.5
-Tested up to: 5.0.2
+Tested up to: 5.2.2
 Stable tag: 0.7.2
 
 == Description ==
