@@ -467,24 +467,33 @@ function pmproet_getTemplateBody($template) {
 	// Defaults
 	$body = "";
 	$file = false;
-	
-    // Load template
-    if(!empty($pmproet_email_defaults[$template]['body']))
-        $body = $pmproet_email_defaults[$template]['body'];
-    elseif ( file_exists( get_stylesheet_directory() . '/paid-memberships-pro/email/' . $template . '.html' ) ) {
-        $file = get_stylesheet_directory() . '/paid-memberships-pro/email/' . $template . '.html';
-    } elseif ( file_exists( get_template_directory() . '/paid-memberships-pro/email/' . $template . '.html') ) {
-	    $file = get_template_directory() . '/paid-memberships-pro/email/' . $template . '.html';
-    } elseif( file_exists( PMPRO_DIR . '/email/' . $template . '.html')) {
-        $file = PMPRO_DIR . '/email/' . $template . '.html';
-    } 
-		
-    if( $file && ! $body ) {
-        ob_start();
-        require_once( $file );
-        $body = ob_get_contents();
-        ob_end_clean();
+    
+    if ( get_transient( 'pmproet_' . $template ) === false ) {
+        // Load template    
+        if(!empty($pmproet_email_defaults[$template]['body'])) {
+            $body = $pmproet_email_defaults[$template]['body'];
+        } elseif ( file_exists( get_stylesheet_directory() . '/paid-memberships-pro/email/' . $template . '.html' ) ) {
+            $file = get_stylesheet_directory() . '/paid-memberships-pro/email/' . $template . '.html';
+        } elseif ( file_exists( get_template_directory() . '/paid-memberships-pro/email/' . $template . '.html') ) {
+            $file = get_template_directory() . '/paid-memberships-pro/email/' . $template . '.html';
+        } elseif( file_exists( PMPRO_DIR . '/email/' . $template . '.html')) {
+            $file = PMPRO_DIR . '/email/' . $template . '.html';
+        } 
+            
+        if( $file && ! $body ) {
+            ob_start();
+            require_once( $file );
+            $body = ob_get_contents();
+            ob_end_clean();
+        }
+
+        if ( ! empty( $body ) ) {
+            set_transient( 'pmproet_' . $template, $body, 1 * HOURS_IN_SECONDS );
+        }
+    } else {
+        $body = get_transient( 'pmproet_' . $template );
     }
+
 
     return $body;
 }
