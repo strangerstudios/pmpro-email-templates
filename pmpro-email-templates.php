@@ -2,7 +2,7 @@
 /*
 Plugin Name: Paid Memberships Pro - Email Templates Add On
 Plugin URI: https://www.paidmembershipspro.com/add-ons/email-templates-admin-editor/
-Description: Define your own members email templates including HTML for Paid Memberships Pro.
+Description: Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
 Author: Paid Memberships Pro
 Author URI: https://www.paidmembershipspro.com
 Version: 0.7.2
