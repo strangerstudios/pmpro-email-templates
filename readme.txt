@@ -1,35 +1,62 @@
 === Paid Memberships Pro - Email Templates Add On ===
-Contributors: strangerstudios, messica
-Tags: pmpro, paid memberships pro, email, templates, customize, member, membership, subscription, addon
+Contributors: strangerstudios
+Tags: email, notification, pmpro, paid memberships pro, welcome email
 Requires at least: 3.5
-Tested up to: 5.2.2
+Tested up to: 5.4
 Stable tag: 0.7.2
 
-== Description ==
-Customize PMPro email templates right from the WordPress dashboard!
-Simply select an email template from the dropdown list, edit, and save!
+Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
 
-== Features ==
-* Edit email templates directly from the WordPress dashboard!
-* Imports existing email templates from paid-memberships-pro/email/ directory
-* Ability to disable header, footer, and even entire emails.
-* Filter to handle all $data variables
-* Variable reference on Email Templates page
+== Description ==
+
+Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
+
+Every email sent by Paid Memberships Pro is included in the editor. This editor also supports emails included in other PMPro Add On plugins, include:
+
+* [Approval Process for Membership Checkout](https://www.paidmembershipspro.com/add-ons/approval-process-membership/)
+* [Recurring Payment Email Reminders](https://www.paidmembershipspro.com/add-ons/recurring-payment-email-reminders/)
+* [Series: Drip-Feed Content](https://www.paidmembershipspro.com/add-ons/pmpro-series-for-drip-feed-content/)
+* [Email Confirmation](https://www.paidmembershipspro.com/add-ons/email-confirmation-add-on/)
+
+[Read the full documentation for the Email Templates Add On](https://www.paidmembershipspro.com/add-ons/email-templates-admin-editor/) or [view the list of emails](https://www.paidmembershipspro.com/documentation/member-communications/list-of-pmpro-email-templates/) by name and when they may be sent to your members.
+
+= Official Paid Memberships Pro Add On =
+
+This is an official Add On for [Paid Memberships Pro](https://www.paidmembershipspro.com), the most complete member management and membership subscriptions plugin for WordPress.
+
+= Features =
+
+* Edit email templates directly from the WordPress dashboard.
+* Imports existing email templates from paid-memberships-pro/email/ directory.
+* Customize the default email header and footer or disable them.
+* Disable specific emails from being sent to your members or the admin.
+* Send yourself a test version of any email.
+* Filter to handle all $data variabless.
+* Field variable reference within the editor.
+
+[youtube https://www.youtube.com/watch?v=xbzYVdA6y2s]
 
 == Installation ==
+
 1. Upload the `pmpro-email-templates` directory to the `/wp-content/plugins/` directory of your site.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Navigate to Memberships > Email Templates to begin customizing emails.
 
 == Frequently Asked Questions ==
-* I found a bug in the plugin.
-  * Please post it in the issues section of GitHub and we'll fix it as soon as we can. Thanks for helping. https://github.com/strangerstudios/pmpro-email-templates/issues
+
+= I found a bug in the plugin. =
+
+Please post it in the issues section of GitHub and we'll fix it as soon as we can. Thanks for helping. https://github.com/strangerstudios/pmpro-email-templates/issues
 
 == Screenshots ==
 
-1. The Email Templates admin page: Select the template to edit. Includes a list of template tags to include in your message body.
+1. Select the template to edit. Modify the content, disable the email entirely, or send yourself a test version of any email.
+2. A list of general and membership related temnplate variables.
+3. A list of billing related temnplate variables.
 
 == Changelog ==
-= .7.2 =
+
+= 0.7.2 =
 * BUG FIX: Fixed admin menu code to work with PMPro 2.0
 
 = .7.1 =
