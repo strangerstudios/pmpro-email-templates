@@ -296,6 +296,8 @@ function pmproet_email_filter($email ) {
             $temp_content = $et_header;
         else
             $temp_content = pmproet_getTemplateBody('header');
+    } else {
+      $temp_content = '';
     }
 
     if(!empty($et_body))
