@@ -93,6 +93,9 @@ function pmproet_get_template_data() {
         $template_data['body'] = pmproet_getTemplateBody($template);
     }
 
+    // Temporary workaround for avoiding double period when using !!membership_change!!
+    $template_data['body'] = str_replace( '!!membership_change!!.', '!!membership_change!!', $template_data['body'] );
+
     if (empty($template_data['subject']) && $template != "header" && $template != "footer") {
         $template_data['subject'] = $pmproet_email_defaults[$template]['subject'];
     }
@@ -310,6 +313,9 @@ function pmproet_email_filter($email ) {
     
     $email->body = $temp_content;
 
+    // Temporary workaround for avoiding double period when using !!membership_change!!
+    $email->body = str_replace( '!!membership_change!!.', '!!membership_change!!', $email->body);
+
     //replace data
     foreach($email->data as $key => $value)
     {
@@ -451,8 +457,11 @@ function pmproet_email_data($data, $email) {
 		if(!isset($data[$key]))
 			$data[$key] = $value;
 	}
-		
-    return $data;
+
+	// Make sure to use this version of !!membership_change!! because of period issue.
+	$data['membership_change'] = $new_data['membership_change'];
+
+	return $data;
 }
 add_filter('pmpro_email_data', 'pmproet_email_data', 10, 2);
 
