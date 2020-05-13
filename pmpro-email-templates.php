@@ -408,13 +408,13 @@ function pmproet_email_data($data, $email) {
     if(!empty($user->membership_level) && !empty($user->membership_level->ID))
        $new_data["membership_change"] = sprintf(__("The new level is %s.", "pmproet"), $user->membership_level->name);
     else
-       $new_data["membership_change"] = __("Your membership has been cancelled", "pmproet");
+       $new_data["membership_change"] = __("Your membership has been cancelled.", "pmproet");
 
     if(!empty($user->membership_level) && !empty($user->membership_level->enddate))
-        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s", "pmproet"), date(get_option('date_format'), $user->membership_level->enddate));
+        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s.", "pmproet"), date(get_option('date_format'), $user->membership_level->enddate));
 
     elseif(!empty($email->expiration_changed))
-        $new_data["membership_change"] .= ". " . __("This membership does not expire", "pmproet");
+        $new_data["membership_change"] .= ". " . __("This membership does not expire.", "pmproet");
 
     //membership expiration
     $new_data['membership_expiration'] = '';
