@@ -323,6 +323,8 @@ function pmproet_email_filter($email ) {
         $email->subject = str_replace("!!" . $key . "!!", $value, $email->subject);
     }
 
+    $email->subject = html_entity_decode($email->subject, ENT_QUOTES);
+
     return $email;
 }
 add_filter('pmpro_email_filter', 'pmproet_email_filter', 10, 1);
