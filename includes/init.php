@@ -167,6 +167,20 @@ $pmproet_email_defaults = array(
 	),
 );
 
+// add SCA payment action required emails if we're using PMPro 2.1 or later
+if( version_compare( PMPRO_VERSION, '2.1' ) >= 0 ) {
+	$pmproet_email_defaults = array_merge( $pmproet_email_defaults, array(
+		'payment_action'            => array(
+			'subject'     => __( "Payment action required for your !!sitename!! membership", 'pmproet' ),
+			'description' => __('Payment Action Required', 'pmproet')
+		),
+		'payment_action_admin'      => array(
+			'subject'     => __( "Payment action required: membership for !!user_login!! at !!sitename!!", 'pmproet' ),
+			'description' => __('Payment Action Required (admin)', 'pmproet')
+		)
+	));
+}
+
 /**
  * Filter default template settings and add new templates.
  *
