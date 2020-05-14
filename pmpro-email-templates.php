@@ -496,7 +496,7 @@ function pmproet_getTemplateBody($template) {
         }
 
         if ( ! empty( $body ) ) {
-            set_transient( 'pmproet_' . $template, $body, 1 * HOURS_IN_SECONDS );
+            set_transient( 'pmproet_' . $template, $body, 300 );
         }
     } else {
         $body = get_transient( 'pmproet_' . $template );
