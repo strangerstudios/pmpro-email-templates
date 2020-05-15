@@ -3,7 +3,7 @@ Contributors: strangerstudios
 Tags: email, notification, pmpro, paid memberships pro, welcome email
 Requires at least: 3.5
 Tested up to: 5.4
-Stable tag: 0.7.2
+Stable tag: 0.8
 
 Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
 
@@ -31,7 +31,7 @@ This is an official Add On for [Paid Memberships Pro](https://www.paidmembership
 * Customize the default email header and footer or disable them.
 * Disable specific emails from being sent to your members or the admin.
 * Send yourself a test version of any email.
-* Filter to handle all $data variabless.
+* Filter to handle all $data variables.
 * Field variable reference within the editor.
 
 [youtube https://www.youtube.com/watch?v=xbzYVdA6y2s]
@@ -51,10 +51,17 @@ Please post it in the issues section of GitHub and we'll fix it as soon as we ca
 == Screenshots ==
 
 1. Select the template to edit. Modify the content, disable the email entirely, or send yourself a test version of any email.
-2. A list of general and membership related temnplate variables.
-3. A list of billing related temnplate variables.
+2. A list of general and membership related template variables.
+3. A list of billing related template variables.
 
 == Changelog ==
+= 0.8 - 2020-05-15 =
+* BUG Fix: Fixed issue where emails could sometimes be sent without body content.
+* BUG FIX: Quotes are now being decoded correctly in email subjects.
+* BUG FIX: Resolved notice shown when email header was disabled.
+* BUG FIX/ENHANCEMENT: Periods now included at the end of the !!membership_change!! variable's contents.
+* ENHANCEMENT: "Payment Action Required" emails are now editable.
+* ENHANCEMENT: Now ensuring that only one version of PMPro Email Templates is active.
 
 = 0.7.2 =
 * BUG FIX: Fixed admin menu code to work with PMPro 2.0
