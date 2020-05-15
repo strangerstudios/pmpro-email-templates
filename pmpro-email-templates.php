@@ -12,12 +12,12 @@ Version: 0.7.2
  * There are 2 versions of this plugin floating around,
  * so we need to make sure we don't activate them both.
  */
-// Deactivate the .org version if it is active.
-if ( in_array( 'pmpro-email-templates-addon/pmpro-email-templates.php', get_option('active_plugins') ) ) {
+// Deactivate the .org version if both are active.
+if ( count( array_intersect( array( 'pmpro-email-templates/pmpro-email-templates.php', 'pmpro-email-templates-addon/pmpro-email-templates.php' ), get_option('active_plugins') ) ) >= 2 ) {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	deactivate_plugins( 'pmpro-email-templates-addon/pmpro-email-templates.php' );
 }
-// Load this version if .org version hasn't already been loaded.
+// Load this version if no other PMProet has been loaded yet.
 if ( ! function_exists( 'pmproet_init' ) ) {
 
 	/*
