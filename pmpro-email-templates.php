@@ -375,7 +375,10 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 			$user = get_user_by('login', $data['user_login']);
 	    if(empty($user))
 	        $user = $current_user;
-	    $pmpro_user_meta = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_memberships_users WHERE user_id = '" . $user->ID . "' AND status='active'");
+		$pmpro_user_meta = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_memberships_users WHERE user_id = '" . $user->ID . "' AND status='active'");
+		
+		//make sure we have the current membership level data
+		$user->membership_level = pmpro_getMembershipLevelForUser($user->ID, true);
 
 		//make sure data is an array
 		if(!is_array($data))
