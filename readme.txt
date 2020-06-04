@@ -3,7 +3,7 @@ Contributors: strangerstudios
 Tags: email, notification, pmpro, paid memberships pro, welcome email
 Requires at least: 3.5
 Tested up to: 5.4
-Stable tag: 0.8
+Stable tag: 0.8.1
 
 Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
 
@@ -55,6 +55,9 @@ Please post it in the issues section of GitHub and we'll fix it as soon as we ca
 3. A list of billing related template variables.
 
 == Changelog ==
+= 0.8.1 - 2020-06-04 =
+* BUG Fix: Fixed issue where !!membership_change!! may not show user's new membership level.
+
 = 0.8 - 2020-05-15 =
 * BUG Fix: Fixed issue where emails could sometimes be sent without body content.
 * BUG FIX: Quotes are now being decoded correctly in email subjects.
