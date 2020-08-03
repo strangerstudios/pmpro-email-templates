@@ -402,7 +402,7 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 		
 		//membership data
 		if(!empty($user->membership_level))
-			$new_data['enddate'] = date(get_option('date_format'), $user->membership_level->enddate);
+			$new_data['enddate'] = date_i18n(get_option('date_format'), $user->membership_level->enddate);
 		
 		//invoice data
 		if(!empty($data['invoice_id']))
