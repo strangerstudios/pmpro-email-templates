@@ -375,7 +375,7 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 			$user = get_user_by('login', $data['user_login']);
 	    if(empty($user))
 	        $user = $current_user;
-		$pmpro_user_meta = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_memberships_users WHERE user_id = '" . $user->ID . "' AND status='active'");
+		$pmpro_user_meta = $wpdb->get_row("SELECT *, UNIX_TIMESTAMP(CONVERT_TZ(enddate, '+00:00', @@global.time_zone)) as enddate FROM $wpdb->pmpro_memberships_users WHERE user_id = '" . $user->ID . "' AND status='active'");
 		
 		//make sure we have the current membership level data
 		$user->membership_level = pmpro_getMembershipLevelForUser($user->ID, true);
@@ -401,8 +401,9 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 		}
 		
 		//membership data
-		if(!empty($user->membership_level))
-			$new_data['enddate'] = date(get_option('date_format'), $user->membership_level->enddate);
+		if(!empty($user->membership_level)) {
+			$new_data['enddate'] = date_i18n( get_option( 'date_format' ), $user->membership_level->enddate );
+		}
 		
 		//invoice data
 		if(!empty($data['invoice_id']))
@@ -445,15 +446,16 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 	       $new_data["membership_change"] = __("Your membership has been cancelled.", "pmproet");
 
 	    if(!empty($user->membership_level) && !empty($user->membership_level->enddate))
-	        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s.", "pmproet"), date(get_option('date_format'), $user->membership_level->enddate));
+	        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s.", "pmproet"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) );
 
 	    elseif(!empty($email->expiration_changed))
 	        $new_data["membership_change"] .= ". " . __("This membership does not expire.", "pmproet");
 
 	    //membership expiration
 	    $new_data['membership_expiration'] = '';
-	    if(!empty($pmpro_user_meta->enddate))
-	        $new_data['membership_expiration'] = "<p>" . sprintf(__("This membership will expire on %s.", "pmproet"), $pmpro_user_meta->enddate . "</p>\n");
+	    if(!empty($pmpro_user_meta->enddate)) {
+	        $new_data['membership_expiration'] = "<p>" . sprintf( __("This membership will expire on %s.", "pmproet"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) ) . "</p>\n";
+	    }
 
 	    //if others are used in the email look in usermeta
 	    $et_body = pmpro_getOption('email_' . $email->template . '_body');
