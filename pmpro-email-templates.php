@@ -36,7 +36,7 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 	function pmproet_load_textdomain() {
 	  load_plugin_textdomain( 'pmproet', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' ); 
 	}
-	add_action( 'plugins_loaded', 'pmproet_load_textdomain' );
+	add_action( 'init', 'pmproet_load_textdomain' );
 
 	/*
 	 * Setup admin pages
