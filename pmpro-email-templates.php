@@ -442,12 +442,14 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 		}        
 
 	    //membership change
-	    if(!empty($user->membership_level) && !empty($user->membership_level->ID))
+		if(!empty($user->membership_level) && !empty($user->membership_level->ID))
+			/* translators: The placeholder is for the level name. */
 	       $new_data["membership_change"] = sprintf(__("The new level is %s.", "pmpro-email-templates"), $user->membership_level->name);
 	    else
 	       $new_data["membership_change"] = __("Your membership has been cancelled.", "pmpro-email-templates");
 
-	    if(!empty($user->membership_level) && !empty($user->membership_level->enddate))
+		if(!empty($user->membership_level) && !empty($user->membership_level->enddate))
+			/* translators: The placeholder is for the level expiration date */
 	        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s.", "pmpro-email-templates"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) );
 
 	    elseif(!empty($email->expiration_changed))
