@@ -34,7 +34,7 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 		Load plugin textdomain.
 	*/
 	function pmproet_load_textdomain() {
-	  load_plugin_textdomain( 'pmproet', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' ); 
+	  load_plugin_textdomain( 'pmpro-email-templates', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' ); 
 	}
 	add_action( 'init', 'pmproet_load_textdomain' );
 
@@ -47,9 +47,9 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 	    }
 	    
 	    if( version_compare( PMPRO_VERSION, '2.0' ) >= 0 ) {
-	        add_submenu_page('pmpro-dashboard', __('Email Templates', 'pmproet'), __('Email Templates', 'pmproet'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
+	        add_submenu_page('pmpro-dashboard', __('Email Templates', 'pmpro-email-templates'), __('Email Templates', 'pmpro-email-templates'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
 	    } else {
-	        add_submenu_page('pmpro-membershiplevels', __('Email Templates', 'pmproet'), __('Email Templates', 'pmproet'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
+	        add_submenu_page('pmpro-membershiplevels', __('Email Templates', 'pmpro-email-templates'), __('Email Templates', 'pmpro-email-templates'), 'manage_options', 'pmpro-email-templates', 'pmproet_admin_page');
 	    }
 	}
 	add_action('admin_menu', 'pmproet_setup', 20);
@@ -69,7 +69,7 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 		$wp_admin_bar->add_menu( array(
 		'id' => 'pmpro-email-templates',
 		'parent' => 'paid-memberships-pro',
-		'title' => __( 'Email Templates', 'pmproet'),
+		'title' => __( 'Email Templates', 'pmpro-email-templates'),
 		'href' => get_admin_url(NULL, '/admin.php?page=pmpro-email-templates') ) );	
 	}
 	add_action('admin_bar_menu', 'pmproet_admin_bar_menu', 1000);
@@ -356,7 +356,7 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 
 	//for test emails
 	function pmproet_test_email_body($body, $email = null) {
-	    $body .= '<br><br><b>--- ' . __('THIS IS A TEST EMAIL', 'pmproet') . ' --</b>';
+	    $body .= '<br><br><b>--- ' . __('THIS IS A TEST EMAIL', 'pmpro-email-templates') . ' --</b>';
 	    return $body;
 	}
 
@@ -443,20 +443,20 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 
 	    //membership change
 	    if(!empty($user->membership_level) && !empty($user->membership_level->ID))
-	       $new_data["membership_change"] = sprintf(__("The new level is %s.", "pmproet"), $user->membership_level->name);
+	       $new_data["membership_change"] = sprintf(__("The new level is %s.", "pmpro-email-templates"), $user->membership_level->name);
 	    else
-	       $new_data["membership_change"] = __("Your membership has been cancelled.", "pmproet");
+	       $new_data["membership_change"] = __("Your membership has been cancelled.", "pmpro-email-templates");
 
 	    if(!empty($user->membership_level) && !empty($user->membership_level->enddate))
-	        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s.", "pmproet"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) );
+	        $new_data["membership_change"] .= ". " . sprintf(__("This membership will expire on %s.", "pmpro-email-templates"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) );
 
 	    elseif(!empty($email->expiration_changed))
-	        $new_data["membership_change"] .= ". " . __("This membership does not expire.", "pmproet");
+	        $new_data["membership_change"] .= ". " . __("This membership does not expire.", "pmpro-email-templates");
 
 	    //membership expiration
 	    $new_data['membership_expiration'] = '';
 	    if(!empty($pmpro_user_meta->enddate)) {
-	        $new_data['membership_expiration'] = "<p>" . sprintf( __("This membership will expire on %s.", "pmproet"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) ) . "</p>\n";
+	        $new_data['membership_expiration'] = "<p>" . sprintf( __("This membership will expire on %s.", "pmpro-email-templates"), date_i18n( get_option( 'date_format' ), $user->membership_level->enddate ) ) . "</p>\n";
 	    }
 
 	    //if others are used in the email look in usermeta
@@ -599,8 +599,8 @@ if ( ! function_exists( 'pmproet_init' ) ) {
 		if(strpos($file, 'pmpro-email-templates.php') !== false)
 		{
 			$new_links = array(
-				'<a href="' . esc_url('https://www.paidmembershipspro.com/add-ons/email-templates-admin-editor/')  . '" title="' . esc_attr( __( 'View Documentation', 'pmproet' ) ) . '">' . __( 'Docs', 'pmproet' ) . '</a>',
-				'<a href="' . esc_url('https://paidmembershipspro.com/support/') . '" title="' . esc_attr( __( 'Visit Customer Support Forum', 'pmproet' ) ) . '">' . __( 'Support', 'pmproet' ) . '</a>',
+				'<a href="' . esc_url('https://www.paidmembershipspro.com/add-ons/email-templates-admin-editor/')  . '" title="' . esc_attr( __( 'View Documentation', 'pmpro-email-templates' ) ) . '">' . __( 'Docs', 'pmpro-email-templates' ) . '</a>',
+				'<a href="' . esc_url('https://paidmembershipspro.com/support/') . '" title="' . esc_attr( __( 'Visit Customer Support Forum', 'pmpro-email-templates' ) ) . '">' . __( 'Support', 'pmpro-email-templates' ) . '</a>',
 			);
 			$links = array_merge($links, $new_links);
 		}

@@ -48,7 +48,7 @@ function pmproet_admin_init_test_order() {
 		$test_order->billing->zip        = '12345';
 		$test_order->billing->phone      = '5558675309';
 		$test_order->gateway_environment = 'sandbox';
-		$test_order->notes               = __( 'This is a test order used with the PMPro Email Templates addon.', 'pmproet' );
+		$test_order->notes               = __( 'This is a test order used with the PMPro Email Templates addon.', 'pmpro-email-templates' );
 		$test_order->saveOrder();
 		$pmproet_test_order_id = $test_order->id;
 		update_option( 'pmproet_test_order_id', $pmproet_test_order_id, 'no' );
@@ -62,108 +62,108 @@ add_action( 'admin_init', 'pmproet_admin_init_test_order'  );
  */
 $pmproet_email_defaults = array(
 	'default'                  => array(
-		'subject'     => __( "An Email From !!sitename!!", "pmproet" ),
-		'description' => __( 'Default Email', 'pmproet')
+		'subject'     => __( "An Email From !!sitename!!", "pmpro-email-templates" ),
+		'description' => __( 'Default Email', 'pmpro-email-templates')
 	),
 	'admin_change'             => array(
-		'subject'     => __( "Your membership at !!sitename!! has been changed", 'pmproet' ),
-		'description' => __( 'Admin Change', 'pmproet')
+		'subject'     => __( "Your membership at !!sitename!! has been changed", 'pmpro-email-templates' ),
+		'description' => __( 'Admin Change', 'pmpro-email-templates')
 	),
 	'admin_change_admin'       => array(
-		'subject'     => __( "Membership for !!user_login!! at !!sitename!! has been changed", 'pmproet' ),
-		'description' => __('Admin Change (admin)', 'pmproet')
+		'subject'     => __( "Membership for !!user_login!! at !!sitename!! has been changed", 'pmpro-email-templates' ),
+		'description' => __('Admin Change (admin)', 'pmpro-email-templates')
 	),
 	'billing'                  => array(
-		'subject'     => __( "Your billing information has been udpated at !!sitename!!", 'pmproet' ),
-		'description' => __('Billing', 'pmproet')
+		'subject'     => __( "Your billing information has been udpated at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Billing', 'pmpro-email-templates')
 	),
 	'billing_admin'            => array(
-		'subject'     => __( "Billing information has been udpated for !!user_login!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Billing (admin)', 'pmproet')
+		'subject'     => __( "Billing information has been udpated for !!user_login!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Billing (admin)', 'pmpro-email-templates')
 	),
 	'billing_failure'          => array(
-		'subject'     => __( "Membership Payment Failed at !!sitename!!", 'pmproet' ),
-		'description' => __('Billing Failure', 'pmproet')
+		'subject'     => __( "Membership Payment Failed at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Billing Failure', 'pmpro-email-templates')
 	),
 	'billing_failure_admin'    => array(
-		'subject'     => __( "Membership Payment Failed For !!display_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Billing Failure (admin)', 'pmproet')
+		'subject'     => __( "Membership Payment Failed For !!display_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Billing Failure (admin)', 'pmpro-email-templates')
 	),
 	'cancel'                   => array(
-		'subject'     => __( "Your membership at !!sitename!! has been CANCELLED", 'pmproet' ),
-		'description' => __('Cancel', 'pmproet')
+		'subject'     => __( "Your membership at !!sitename!! has been CANCELLED", 'pmpro-email-templates' ),
+		'description' => __('Cancel', 'pmpro-email-templates')
 	),
 	'cancel_admin'             => array(
-		'subject'     => __( "Membership for !!user_login!! at !!sitename!! has been CANCELLED", 'pmproet' ),
-		'description' => __('Cancel (admin)', 'pmproet')
+		'subject'     => __( "Membership for !!user_login!! at !!sitename!! has been CANCELLED", 'pmpro-email-templates' ),
+		'description' => __('Cancel (admin)', 'pmpro-email-templates')
 	),
 	'checkout_check'           => array(
-		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Check', 'pmproet')
+		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Check', 'pmpro-email-templates')
 	),
 	'checkout_check_admin'     => array(
-		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Check (admin)', 'pmproet')
+		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Check (admin)', 'pmpro-email-templates')
 	),
 	'checkout_express'         => array(
-		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - PayPal Express', 'pmproet')
+		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - PayPal Express', 'pmpro-email-templates')
 	),
 	'checkout_express_admin'   => array(
-		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - PayPal Express (admin)', 'pmproet')
+		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - PayPal Express (admin)', 'pmpro-email-templates')
 	),
 	'checkout_free'            => array(
-		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Free', 'pmproet')
+		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Free', 'pmpro-email-templates')
 	),
 	'checkout_free_admin'      => array(
-		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Free (admin)', 'pmproet')
+		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Free (admin)', 'pmpro-email-templates')
 	),
 	'checkout_freetrial'       => array(
-		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Free Trial', 'pmproet')
+		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Free Trial', 'pmpro-email-templates')
 	),
 	'checkout_freetrial_admin' => array(
-		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Free Trial (admin)', 'pmproet')
+		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Free Trial (admin)', 'pmpro-email-templates')
 	),
 	'checkout_paid'            => array(
-		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Paid', 'pmproet')
+		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Paid', 'pmpro-email-templates')
 	),
 	'checkout_paid_admin'      => array(
-		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Paid (admin)', 'pmproet')
+		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Paid (admin)', 'pmpro-email-templates')
 	),
 	'checkout_trial'           => array(
-		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Trial', 'pmproet')
+		'subject'     => __( "Your membership confirmation for !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Trial', 'pmpro-email-templates')
 	),
 	'checkout_trial_admin'     => array(
-		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmproet' ),
-		'description' => __('Checkout - Trial (admin)', 'pmproet')
+		'subject'     => __( "Member Checkout for !!membership_level_name!! at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Checkout - Trial (admin)', 'pmpro-email-templates')
 	),
 	'credit_card_expiring'     => array(
-		'subject'     => __( "Credit Card on File Expiring Soon at !!sitename!!", 'pmproet' ),
-		'description' => __('Credit Card Expiring', 'pmproet')
+		'subject'     => __( "Credit Card on File Expiring Soon at !!sitename!!", 'pmpro-email-templates' ),
+		'description' => __('Credit Card Expiring', 'pmpro-email-templates')
 	),
 	'invoice'                  => array(
-		'subject'     => __( "INVOICE for !!sitename!! membership", 'pmproet' ),
-		'description' => __('Invoice', 'pmproet')
+		'subject'     => __( "INVOICE for !!sitename!! membership", 'pmpro-email-templates' ),
+		'description' => __('Invoice', 'pmpro-email-templates')
 	),
 	'membership_expired'       => array(
-		'subject'     => __( "Your membership at !!sitename!! has ended", 'pmproet' ),
-		'description' => __('Membership Expired', 'pmproet')
+		'subject'     => __( "Your membership at !!sitename!! has ended", 'pmpro-email-templates' ),
+		'description' => __('Membership Expired', 'pmpro-email-templates')
 	),
 	'membership_expiring'      => array(
-		'subject'     => __( "Your membership at !!sitename!! will end soon", 'pmproet' ),
-		'description' => __('Membership Expiring', 'pmproet')
+		'subject'     => __( "Your membership at !!sitename!! will end soon", 'pmpro-email-templates' ),
+		'description' => __('Membership Expiring', 'pmpro-email-templates')
 	),
 	'trial_ending'             => array(
-		'subject'     => __( "Your trial at !!sitename!! is ending soon", 'pmproet' ),
-		'description' => __('Trial Ending', 'pmproet')
+		'subject'     => __( "Your trial at !!sitename!! is ending soon", 'pmpro-email-templates' ),
+		'description' => __('Trial Ending', 'pmpro-email-templates')
 	),
 );
 
@@ -171,12 +171,12 @@ $pmproet_email_defaults = array(
 if( version_compare( PMPRO_VERSION, '2.1' ) >= 0 ) {
 	$pmproet_email_defaults = array_merge( $pmproet_email_defaults, array(
 		'payment_action'            => array(
-			'subject'     => __( "Payment action required for your !!sitename!! membership", 'pmproet' ),
-			'description' => __('Payment Action Required', 'pmproet')
+			'subject'     => __( "Payment action required for your !!sitename!! membership", 'pmpro-email-templates' ),
+			'description' => __('Payment Action Required', 'pmpro-email-templates')
 		),
 		'payment_action_admin'      => array(
-			'subject'     => __( "Payment action required: membership for !!user_login!! at !!sitename!!", 'pmproet' ),
-			'description' => __('Payment Action Required (admin)', 'pmproet')
+			'subject'     => __( "Payment action required: membership for !!user_login!! at !!sitename!!", 'pmpro-email-templates' ),
+			'description' => __('Payment Action Required (admin)', 'pmpro-email-templates')
 		)
 	));
 }
