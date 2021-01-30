@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-01-30T09:01:44+00:00\n"
+"POT-Creation-Date: 2021-01-30T09:11:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.3.0\n"
 "X-Domain: pmpro-email-templates\n"
@@ -420,35 +420,37 @@ msgstr ""
 msgid "THIS IS A TEST EMAIL"
 msgstr ""
 
-#: pmpro-email-templates.php:446
+#. translators: The placeholder is for the level name.
+#: pmpro-email-templates.php:447
 msgid "The new level is %s."
 msgstr ""
 
-#: pmpro-email-templates.php:448
+#: pmpro-email-templates.php:449
 msgid "Your membership has been cancelled."
 msgstr ""
 
-#: pmpro-email-templates.php:451
-#: pmpro-email-templates.php:459
+#. translators: The placeholder is for the level expiration date
+#: pmpro-email-templates.php:453
+#: pmpro-email-templates.php:461
 msgid "This membership will expire on %s."
 msgstr ""
 
-#: pmpro-email-templates.php:454
+#: pmpro-email-templates.php:456
 msgid "This membership does not expire."
 msgstr ""
 
-#: pmpro-email-templates.php:602
+#: pmpro-email-templates.php:604
 msgid "View Documentation"
 msgstr ""
 
-#: pmpro-email-templates.php:602
+#: pmpro-email-templates.php:604
 msgid "Docs"
 msgstr ""
 
-#: pmpro-email-templates.php:603
+#: pmpro-email-templates.php:605
 msgid "Visit Customer Support Forum"
 msgstr ""
 
-#: pmpro-email-templates.php:603
+#: pmpro-email-templates.php:605
 msgid "Support"
 msgstr ""
