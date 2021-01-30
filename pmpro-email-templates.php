@@ -5,6 +5,8 @@ Plugin URI: https://www.paidmembershipspro.com/add-ons/email-templates-admin-edi
 Description: Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
 Author: Paid Memberships Pro
 Author URI: https://www.paidmembershipspro.com
+Text Domain: pmpro-email-templates
+Domain Path: /languages
 Version: 0.8.1
 */
 
