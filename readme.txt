@@ -2,7 +2,7 @@
 Contributors: strangerstudios
 Tags: email, notification, pmpro, paid memberships pro, welcome email
 Requires at least: 3.5
-Tested up to: 5.4
+Tested up to: 5.7
 Stable tag: 0.8.1
 
 Customize member emails for Paid Memberships Pro using an interactive admin editor within the WordPress dashboard.
